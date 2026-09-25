@@ -1,19 +1,22 @@
 class Solution {
-    public int smallestIndex(int[] nums) {
-
-        for (int i = 0; i < nums.length; i++) {
-            int x = nums[i];
+    public int smallestIndex(int[] arr) {
+        int n = arr.length;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
             int sum = 0;
-
-            while (x > 0) {
-                sum += x % 10;
-                x /= 10;
+            while (arr[i] > 0) {
+                sum += arr[i] % 10;
+                arr[i] = arr[i] / 10;
+            }
+            if (i == sum) {
+                min = Math.min(min, i);
             }
 
-            if (sum == i)
-                return i;
+        }
+        if (min == Integer.MAX_VALUE) {
+            return -1;
         }
 
-        return -1;
+        return min;
     }
 }
