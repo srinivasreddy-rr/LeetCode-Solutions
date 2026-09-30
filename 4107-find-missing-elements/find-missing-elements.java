@@ -1,7 +1,6 @@
 class Solution {
     public List<Integer> findMissingElements(int[] arr) {
         ArrayList<Integer> set = new ArrayList<>();
-        ArrayList<Integer> set1 = new ArrayList<>();
         int n = arr.length;
         Arrays.sort(arr);
         int min = arr[0];
